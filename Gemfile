@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# For facebook authentication
+gem 'omniauth'
+gem 'omniauth-facebook'
 # For username and password
 gem 'figaro'
 # For user management gem
