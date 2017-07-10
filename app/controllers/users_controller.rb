@@ -9,6 +9,7 @@ class UsersController < Clearance::UsersController
      else
        render template: "users/new"
      end
- end
+  end
 
 end
+
