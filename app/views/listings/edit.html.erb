@@ -1,0 +1,12 @@
+<p> This is your listings </p>
+
+<%=@listing.name%>
+<%=@listing.description%>
+<%=@listing.price%>
+
+<p> Edit to:</p>
+
+<%= form_for [@listing] do |form| %>
+<%= render partial: '/listings/form', object: form %>
+<%= form.submit %>
+<% end %>

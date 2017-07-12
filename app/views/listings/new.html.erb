@@ -1,0 +1,10 @@
+<div>
+  <%= form_for @listing do |form| %>
+    <%= render partial: '/listings/form', object: form %>
+
+    <div class="submit-field-listing">
+    <%= form.submit %>
+    </div>
+
+  <% end %>
+</div>

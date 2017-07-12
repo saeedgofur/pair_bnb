@@ -8,6 +8,8 @@ end
 # For facebook authentication
 gem 'omniauth'
 gem 'omniauth-facebook'
+# For fake population in database
+gem 'faker'
 # For username and password
 gem 'figaro'
 # For user management gem

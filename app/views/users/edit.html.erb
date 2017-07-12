@@ -1,0 +1,10 @@
+
+<%= form_for @user do |form| %>
+  <%= render partial: '/users/form', object: form %>
+  <div class="submit-field">
+      <%= form.submit %>
+  </div>
+
+  <%= link_to "Delete account" , user_path(current_user.id), method: :delete, data:{confirm: "are you sure?"} %>
+
+<% end %>
