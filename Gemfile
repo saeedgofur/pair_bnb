@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# For pagination
+gem 'will_paginate', '~> 3.1.1'
 # For facebook authentication
 gem 'omniauth'
 gem 'omniauth-facebook'

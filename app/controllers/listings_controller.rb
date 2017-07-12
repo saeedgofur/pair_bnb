@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
 
   def index
-    @listings = Listing.all
+    @listings = Listing.all.paginate(page: params[:page], per_page:5)
   end
   
   def new
