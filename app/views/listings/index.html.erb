@@ -1,0 +1,27 @@
+<h1><%= current_user.email %></h1>
+
+<%= link_to "Make a new listing", new_listing_path(current_user.id) %>
+
+
+
+<p><b>Your Listing</b></p>
+<% if @listing.is_a? String %>
+    <%= @listing %>
+    <% else %>
+    <tr>
+ <td>Name</td>
+ <td>Description</td>
+ <td>Price</td>
+
+ <tr><br>
+ <% @listings.each do |list| %>
+ <td><%= list.name %> </td>
+ <td><%= list.description %></td>
+ <td><%= list.price %></td><br>
+ <td><%=link_to "Edit" , edit_listing_path(list.id)%></td>
+ <td><%= link_to "Delete" , listing_path(list.id), method: :delete, data:{confirm: "are you sure?"} %></td><br>
+ </tr>
+
+
+ <% end %>
+<% end %>
