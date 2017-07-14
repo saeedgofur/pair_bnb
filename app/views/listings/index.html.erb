@@ -3,7 +3,6 @@
 <%= link_to "Make a new listing", new_listing_path(current_user.id) %>
 
 
-
 <p><b>Your Listing</b></p>
 <% if @listing.is_a? String %>
     <%= @listing %>
@@ -18,10 +17,16 @@
  <td><%= list.name %> </td>
  <td><%= list.description %></td>
  <td><%= list.price %></td><br>
+ <td><% if !list.images.empty? %>
+  <%= image_tag list.images[0].url %>
+  <% end %></td>
  <td><%=link_to "Edit" , edit_listing_path(list.id)%></td>
  <td><%= link_to "Delete" , listing_path(list.id), method: :delete, data:{confirm: "are you sure?"} %></td><br>
  </tr>
 
- <% end %>
+  <% end %>
 <% end %>
+
+<%= link_to "Back to profile", welcome_path %>
+
 <%= will_paginate @listings %>

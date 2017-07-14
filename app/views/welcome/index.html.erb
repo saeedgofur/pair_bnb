@@ -1,5 +1,13 @@
 <div id="index">
 <h1>Welcome to my AnginBnB</h1>
+ 
+  <p>
+  <strong>Image:</strong>
+  <% if !current_user.image.file.nil? %>
+  <%= image_tag current_user.image.url %>
+  <% end %>
+  </p>
+
 <%= link_to "Edit profile settings", edit_user_path(current_user.id) %>
 <%= link_to "Click here to add Property listings", "/listings/new" %>
 

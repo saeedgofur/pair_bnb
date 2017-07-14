@@ -13,3 +13,9 @@
   <%= form.text_field :price %>
 </div>
 
+<div class="image-field">
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+</div>
+
+<%= link_to "Show all listings", listings_path %>

@@ -42,12 +42,12 @@ class UsersController < Clearance::UsersController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :image)
   end
 
   def update_user_params
     if params[:user][:password] == ''
-      params.require(:user).permit(:email)
+      params.require(:user).permit(:email, :image)
     else
       user_params
     end

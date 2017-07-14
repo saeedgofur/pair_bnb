@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
   end 
 
   def create
-    @listing = current_user.listings.new(name: params[:listing][:name], description: params[:listing][:description], price: params[:listing][:price])
+    @listing = current_user.listings.new(listing_params)
     if @listing.save
       redirect_to listings_path
     else
@@ -27,9 +27,9 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listing = Listing.find(params[:listing][:id])
+    @listing = Listing.find(params[:id])
     @listing.update(listing_params)
-    redirect_to listing_path(@listing.id)
+    redirect_to listings_path(@listing.id)
   end
 
   def destroy
@@ -43,7 +43,7 @@ class ListingsController < ApplicationController
 
   private
   def listing_params
-    params.require(:listing).permit(:name, :description, :price)
+    params.require(:listing).permit(:name, :description, :price, {images: []})
   end
 
 end

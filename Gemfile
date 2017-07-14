@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
 # For pagination
 gem 'will_paginate', '~> 3.1.1'
 # For facebook authentication
@@ -28,6 +29,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+# For image uploading
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '~> 4.3'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
