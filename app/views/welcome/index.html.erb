@@ -1,12 +1,20 @@
 <div id="index">
 <h1>Welcome to my AnginBnB</h1>
  
+<% if current_user.role == "admin" %>
+<p>You are admin!</p>
+<% end %>
+
   <p>
   <strong>Image:</strong>
   <% if !current_user.image.file.nil? %>
   <%= image_tag current_user.image.url %>
   <% end %>
   </p>
+
+<% if current_user.role == "admin" %>
+<p> This is admin. </p>
+<% end %>
 
 <%= link_to "Edit profile settings", edit_user_path(current_user.id) %>
 <%= link_to "Click here to add Property listings", "/listings/new" %>
