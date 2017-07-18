@@ -18,15 +18,19 @@
  <td><%= list.description %></td>
  <td><%= list.price %></td><br>
  <td><% if !list.images.empty? %>
-  <%= image_tag list.images[0].url %>
-  <% end %></td>
- <td><%=link_to "Edit" , edit_listing_path(list.id)%></td>
+    <%= image_tag list.images[0].url %>
+    <% end %></td>
+    
+ <td><%= link_to 'Make Reservation', new_listing_reservation_path(list) %></td>
+ <td><%= link_to "Edit" , edit_listing_path(list.id)%></td>
  <td><%= link_to "Delete" , listing_path(list.id), method: :delete, data:{confirm: "are you sure?"} %></td><br>
  </tr>
 
   <% end %>
 <% end %>
 
+<%= will_paginate @listings %>
+
+
 <%= link_to "Back to profile", welcome_path %>
 
-<%= will_paginate @listings %>

@@ -1,0 +1,30 @@
+<h1>Welcome to Anginbnb</h1>
+<h2>All the Reservations made</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Reserved by</th>
+    <th>Check in date</th>
+    <th>Check out date</th>
+  </tr>
+
+  <% @reservations.each do |res| %>
+  <tr>
+    <td><%= res.listing.name %></td>
+    <td><%= res.listing.description %></td>
+    <td><%= res.listing.price %></td>
+    <td><%= res.user.email %></td>
+    <td><%= res.check_in %></td>
+    <td><%= res.check_out %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @reservations %>
+
+<%= link_to 'My Listing', listings_path %>
+
+<%= link_to 'Create new listing', new_listing_path %>

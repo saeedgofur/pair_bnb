@@ -1,0 +1,19 @@
+    <% @reservation.listing.images.each do |p| %>
+    <%= image_tag p unless @listing.images.blank? %>
+    <% end %>
+    
+    <p>Name: <%= @reservation.listing.name %></p>
+    <p>Description: <%= @reservation.listing.description %></p>
+    <P>Price: <%= @reservation.listing.price %></p>
+
+    <h3>Date reserved:</h3>
+
+    <p>From <%= @reservation.check_in %> to <%= @reservation.check_out %> </p>
+
+    <%= link_to 'All Reservation', listing_reservations_path %>
+
+    <%= link_to 'All Listing', listings_path %>
+
+    <%= link_to 'Edit Reservation', edit_listing_reservation_path(@reservation.listing.id) %>
+
+    <%= link_to 'Delete Reservation', listing_reservation_path(@reservation.listing.id), method: :delete, data: {confirm: 'Are your sure?'} %>
