@@ -12,11 +12,12 @@
   <% end %>
   </p>
 
-<% if current_user.role == "admin" %>
-<p> This is admin. </p>
-<% end %>
-
 <%= link_to "Edit profile settings", edit_user_path(current_user.id) %>
 <%= link_to "Click here to add Property listings", "/listings/new" %>
 
 </div>
+
+<div class="btn-group">
+  <button type="button" id="button">Click here for something fun</button>
+</div>
+<div id="joke_container"></div>
